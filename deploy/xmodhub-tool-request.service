@@ -1,0 +1,20 @@
+[Unit]
+Description=XMODhub Tool Request API and Web
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=xmodhub
+Group=xmodhub
+WorkingDirectory=/opt/xmodhub-tool-request
+EnvironmentFile=/opt/xmodhub-tool-request/backend/.env
+ExecStart=/opt/xmodhub-tool-request/.venv/bin/uvicorn backend.app:app --host 127.0.0.1 --port 8501 --proxy-headers --forwarded-allow-ips=127.0.0.1
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

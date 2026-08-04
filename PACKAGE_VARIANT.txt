@@ -1,0 +1,9 @@
+XMODhub.com /tool-request/ global full-stack package
+
+Language priority:
+1. URL query parameter
+2. Saved user preference
+3. Browser language (Simplified Chinese, Traditional Chinese or English)
+4. English fallback for all other browser languages
+
+IP-based language detection: disabled
